@@ -1,12 +1,13 @@
 import React from "react";
 
-const Camper = () => {
+const Camper = (props) => {
+  console.log(props.camper);
   return (
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{props.number}</th>
+      <td className="name"><img src={props.camper.img} alt="camper avatar"/> {props.camper.username}</td>
+      <td>{props.camper.recent}</td>
+      <td>{props.camper.alltime}</td>
     </tr>
   )
 }

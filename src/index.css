@@ -8,6 +8,7 @@ body {
 header {
   background-color: green;
   padding: 5px;
+  width: 100%;
 }
 
 h1 {
@@ -27,6 +28,26 @@ th {
   width: 170px;
 }
 
+tr {
+  height: 50px;
+}
+
+.name {
+  text-align: left;
+}
+
 thead {
   font-size: 16px;
+}
+
+img {
+  width: 30px;
+  border-radius: 10%;
+  border: 1px solid black;
+}
+
+.selectable {
+  color: green;
+  text-decoration: underline;
+  cursor: pointer;
 }
