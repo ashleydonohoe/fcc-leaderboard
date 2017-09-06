@@ -30,6 +30,7 @@ th {
 
 tr {
   height: 50px;
+  border: 1px solid lightgrey;
 }
 
 .name {
@@ -44,6 +45,7 @@ img {
   width: 30px;
   border-radius: 10%;
   border: 1px solid black;
+  margin-right: 10px;
 }
 
 .selectable {
