@@ -10,7 +10,7 @@ class Results extends React.Component {
       campers: null
     }
   }
-
+  
   componentDidMount() {
     {/* Fetch initial campers */}
     this.getTopRecent();
