@@ -1,19 +1,39 @@
 import React from 'react';
-import {
-  Grid,
-  ListGroup,
-  ListGroupItem
-} from 'react-bootstrap';
+import Camper from "./Camper";
+import API from "./../API";
 
-const Results = () => (
-  <Grid>
-    <h2>Results List</h2>
-    <ListGroup>
-      <ListGroupItem href="#" active>Link 1</ListGroupItem>
-      <ListGroupItem href="#">Link 2</ListGroupItem>
-      <ListGroupItem href="#" disabled>Link 3</ListGroupItem>
-    </ListGroup>
-  </Grid>
-);
+class Results extends React.Component {
+  componentDidMount() {
+    API.fetchTop100For30Days().then(function(campers) {
+      if(campers === null) {
+        console.log("No data found");
+      } else {
+        console.log(campers);
+        this.setState({
+          topRecent: campers
+        });
+      }
+    }.bind(this));
+  }
+
+  render() {
+    return (
+      <table className="camper-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Camper Name</th>
+          <th>Points in past 30 Days</th>
+          <th>All Time Points</th>
+        </tr>
+      </thead>
+      <tbody>
+      { /*Create a table row with info for each player */}
+      <Camper/>
+      </tbody>
+    </table>
+    )
+  }
+};
 
 export default Results;
